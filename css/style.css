@@ -1,0 +1,12 @@
+#menu-left {
+    float:left;
+    width:150px;
+}
+#menu-right {
+    float:right;
+    width:150px;
+}
+#menu-center {
+    float:center;
+    width:250px
+}

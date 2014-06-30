@@ -1,0 +1,21 @@
+!.gitignore
+!.htaccess
+!web.config
+
+# Node, npm, Grunt, Bower
+node_modules/
+.tmp/
+/www/dev/*
+!/www/dev/local/
+/www/res/css
+/www/res/js
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
+
+# NetBeans
+/nbproject/
