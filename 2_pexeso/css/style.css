@@ -1,0 +1,50 @@
+div {
+  box-sizing: border-box;
+}
+.card {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+.card .frontside,
+.card .backside {
+  border: 1px solid #000;
+  border-radius: 20px;
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+.card .frontside {
+  padding: 10px;
+  z-index: 0;
+  background: #fff;
+}
+.card .frontside img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.card .backside {
+  z-index: 1;
+  background-color: #555;
+}
+.card .backside span {
+  display: block;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  font-family: Arial;
+  font-size: 25px;
+  text-transform: uppercase;
+  line-height: 98px;
+}
+.card.opened .frontside {
+  z-index: 1;
+}
+.card.opened .backside {
+  z-index: 0;
+}
