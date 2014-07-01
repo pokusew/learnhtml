@@ -1,13 +1,104 @@
+.no-select()
+{
+	user-select: none;
+	-o-user-select:none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+}
+
 div {
 	box-sizing: border-box;
 }
 
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
+}
+
+.container {
+	width: 415px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hidden {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+.row {
+	display: block;
+	width: 100%;
+	.card {
+		float: left;
+		margin-bottom: 5px;
+		&:not(:first-child) {
+			margin-left: 5px;
+		}
+	}
+	&:before, &:after {
+		display: table;
+		content: '';
+		clear: both;
+	}
+}
+
+#game {
+	margin-top: 20px;
+	#infoBox {
+		margin-bottom: 20px;
+	}
+}
+
+.counter-box {
+	width:  50%;
+	padding-right: 10px;
+	&.pull-right {
+		padding-right: 0px;
+		padding-left: 10px;
+	}
+	.label {
+		display: block;
+		font-size: 20px;
+		line-height: 25px;
+		vertical-align: middle;
+	}
+	.counter {
+		float: right;
+		display: block;
+		transition: 2s;
+		color: #fff;
+		vertical-align: middle;
+		font-size: 25px;
+		line-height: 25px;
+		padding: 0 10px;
+		background: #000;
+	}
+}
 
 .card {
 	display: block;
 	width: 100px;
 	height: 100px;
 	.frontside, .backside {
+		.no-select;
+		cursor: pointer;
+		transition: 2s;
 		border: 1px solid #000;
 		border-radius: 20px;
 		position: absolute;
@@ -16,27 +107,31 @@ div {
 		height: 100px;
 	}
 	.frontside {
+		line-height: 78px;
+		text-align: center;
 		padding: 10px;
 		z-index: 0;
 		background: #fff;
+		-webkit-transform: rotateY(-180deg);
 		img {
-			display: block;
+			display: inline-block;
+			vertical-align: middle;
 			margin: 0;
 			padding: 0;
-			width: 100%;
-			height: 100%;
+			max-width: 100%;
+			max-height: 100%;
 		}
 	}
 	.backside {
 		z-index: 1;
-		background-color: #555;
+		background-color: #777;
+		-webkit-transform: rotateY(0deg);
 		span {
 			display: block;
 			-moz-transform: rotate(-45deg);
 			-ms-transform: rotate(-45deg);
 			-webkit-transform: rotate(-45deg);
 			transform: rotate(-45deg);
-			font-family: Arial;
 			font-size: 25px;
 			text-transform: uppercase;
 			line-height: 98px;
@@ -45,9 +140,12 @@ div {
 	&.opened {
 		.frontside {
 			z-index: 1;
+			-webkit-transform: rotateY(0deg);
+			box-shadow: 0px 0px 10px 2px #777;
 		}
 		.backside {
 			z-index: 0;
+			-webkit-transform: rotateY(180deg);
 		}
 	}
 }
